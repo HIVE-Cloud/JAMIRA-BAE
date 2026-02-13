@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Norah ❤️</title>
+    <style>
+        /* 🌹 NORAH'S PHOTO AS FULL BACKGROUND - CRYSTAL CLEAR */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            background-image: url('https://github.com/HIVE-Cloud/NORAH-Valentines/raw/main/IMG-20260211-WA0008.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        /* 🌟 COMPLETELY TRANSPARENT CARD - ONLY TEXT SHOWS, PHOTO FULLY VISIBLE */
+        .card {
+            background: rgba(255, 255, 255, 0.2); /* VERY LIGHT - ALMOST INVISIBLE */
+            backdrop-filter: blur(3px); /* JUST A TINY BLUR TO MAKE TEXT POP */
+            padding: 40px 30px;
+            border-radius: 50px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            max-width: 650px;
+            width: 100%;
+            text-align: center;
+            border: 2px solid rgba(255, 255, 255, 0.4); /* SOFT WHITE BORDER */
+        }
+
+        .heart {
+            font-size: 6rem;
+            color: #ff1493;
+            animation: heartbeat 1.3s infinite;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 15px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            color: white;
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            text-shadow: 3px 3px 15px rgba(0,0,0,0.5);
+            font-weight: 900;
+        }
+
+        p {
+            font-size: 2.2rem;
+            color: white;
+            margin: 25px 0;
+            font-weight: 800;
+            text-shadow: 3px 3px 15px rgba(0,0,0,0.5);
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            position: relative;
+            min-height: 120px;
+        }
+
+        .btn {
+            border: none;
+            padding: 18px 55px;
+            border-radius: 60px;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            border: 2px solid white;
+        }
+
+        .yes {
+            background: rgba(255, 77, 109, 0.85);
+            color: white;
+            backdrop-filter: blur(2px);
+        }
+
+        .yes:hover {
+            background: #c9184a;
+            transform: scale(1.1);
+        }
+
+        .no {
+            background: rgba(211, 211, 211, 0.85);
+            color: #2d2d2d;
+            position: relative;
+            backdrop-filter: blur(2px);
+        }
+
+        .hidden-message {
+            display: none;
+            margin-top: 30px;
+            font-size: 1.6rem;
+            color: white;
+            background: rgba(0, 0, 0, 0.3); /* DARK SEMI-TRANSPARENT */
+            padding: 25px;
+            border-radius: 40px;
+            border: 2px dashed rgba(255, 255, 255, 0.6);
+            width: 100%;
+            backdrop-filter: blur(4px);
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        }
+
+        /* 🎬 BIG VIDEO - CLEAN BACKGROUND */
+        .video-container {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        video {
+            width: 100%;
+            max-height: 450px;
+            border-radius: 30px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            border: 4px solid white;
+            background: transparent;
+        }
+
+        .video-message {
+            margin-top: 25px;
+            font-size: 1.8rem;
+            color: white;
+            font-weight: bold;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 18px;
+            border-radius: 60px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            backdrop-filter: blur(4px);
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="heart">❤️</div>
+        <h1 id="greeting">Dear Norah,</h1>
+        <p id="question">Will you be my Valentine? 😍😘💋🌹</p>
+
+        <div class="buttons" id="buttonArea">
+            <button class="btn yes" id="yesBtn">Yes 🥰❤️</button>
+            <button class="btn no" id="noBtn">No 😔</button>
+        </div>
+
+        <div id="responseMessage" class="hidden-message"></div>
+    </div>
+
+    <script>
+        const noBtn = document.getElementById('noBtn');
+        const yesBtn = document.getElementById('yesBtn');
+        const messageDiv = document.getElementById('responseMessage');
+        const buttonArea = document.getElementById('buttonArea');
+        const greeting = document.getElementById('greeting');
+        const question = document.getElementById('question');
+
+        noBtn.addEventListener('mouseover', function() {
+            const x = Math.random() * (buttonArea.clientWidth - noBtn.clientWidth);
+            const y = Math.random() * (buttonArea.clientHeight - noBtn.clientHeight);
+            noBtn.style.position = 'absolute';
+            noBtn.style.left = x + 'px';
+            noBtn.style.top = y + 'px';
+            
+            messageDiv.style.display = 'block';
+            messageDiv.innerHTML = '😳 Saying no would just be shy… don’t you think, Norah? 💘';
+        });
+
+        noBtn.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            const x = Math.random() * (buttonArea.clientWidth - noBtn.clientWidth);
+            const y = Math.random() * (buttonArea.clientHeight - noBtn.clientHeight);
+            noBtn.style.position = 'absolute';
+            noBtn.style.left = x + 'px';
+            noBtn.style.top = y + 'px';
+            
+            messageDiv.style.display = 'block';
+            messageDiv.innerHTML = '😳 Saying no would just be shy… don’t you think, Norah? 💘';
+        });
+
+        yesBtn.addEventListener('click', function() {
+            buttonArea.style.display = 'none';
+            question.style.display = 'none';
+            greeting.innerHTML = 'Yay! You said YES! ❤️ Norah';
+            
+            messageDiv.style.display = 'block';
+            messageDiv.style.background = 'transparent';
+            messageDiv.style.border = 'none';
+            messageDiv.style.padding = '0';
+            messageDiv.style.backdropFilter = 'none';
+            
+            messageDiv.innerHTML = `
+                <div class="video-container">
+                    <video controls autoplay loop>
+                        <source src="https://github.com/HIVE-Cloud/NORAH-Valentines/raw/main/VivaCut_video_1770806034928_HD.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-message">
+                        This is the moment I knew. 💕
+                    </div>
+                </div>
+            `;
+        });
+    </script>
+</body>
+  </html>
