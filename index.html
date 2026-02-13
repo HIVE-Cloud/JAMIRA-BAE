@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Norah ❤️</title>
+    <title>For Jamira ❤️</title>
     <style>
-        /* 🌹 NORAH'S PHOTO AS FULL BACKGROUND - CRYSTAL CLEAR */
         * {
             margin: 0;
             padding: 0;
@@ -19,7 +18,7 @@
         }
 
         body {
-            background-image: url('https://github.com/HIVE-Cloud/NORAH-Valentines/raw/main/IMG-20260211-WA0008.jpg');
+            background-image: url('https://raw.githubusercontent.com/HIVE-Cloud/JAMIRA-BAE/refs/heads/main/IMG-20260212-WA0008.jpg');
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-position: center;
@@ -31,22 +30,21 @@
             margin: 0;
         }
 
-        /* 🌟 COMPLETELY TRANSPARENT CARD - ONLY TEXT SHOWS, PHOTO FULLY VISIBLE */
         .card {
-            background: rgba(255, 255, 255, 0.2); /* VERY LIGHT - ALMOST INVISIBLE */
-            backdrop-filter: blur(3px); /* JUST A TINY BLUR TO MAKE TEXT POP */
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(4px);
             padding: 40px 30px;
             border-radius: 50px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.3);
             max-width: 650px;
             width: 100%;
             text-align: center;
-            border: 2px solid rgba(255, 255, 255, 0.4); /* SOFT WHITE BORDER */
+            border: 2px solid rgba(255, 255, 255, 0.4);
         }
 
         .heart {
             font-size: 6rem;
-            color: #ff1493;
+            color: #ff99cc;
             animation: heartbeat 1.3s infinite;
             margin-bottom: 10px;
             text-shadow: 2px 2px 15px rgba(0,0,0,0.3);
@@ -91,13 +89,13 @@
         }
 
         .yes {
-            background: rgba(255, 77, 109, 0.85);
+            background: rgba(255, 105, 180, 0.85);
             color: white;
             backdrop-filter: blur(2px);
         }
 
         .yes:hover {
-            background: #c9184a;
+            background: #ff1493;
             transform: scale(1.1);
         }
 
@@ -111,9 +109,9 @@
         .hidden-message {
             display: none;
             margin-top: 30px;
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             color: white;
-            background: rgba(0, 0, 0, 0.3); /* DARK SEMI-TRANSPARENT */
+            background: rgba(0, 0, 0, 0.3);
             padding: 25px;
             border-radius: 40px;
             border: 2px dashed rgba(255, 255, 255, 0.6);
@@ -122,7 +120,6 @@
             text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
         }
 
-        /* 🎬 BIG VIDEO - CLEAN BACKGROUND */
         .video-container {
             width: 100%;
             margin-top: 20px;
@@ -161,12 +158,12 @@
 <body>
     <div class="card">
         <div class="heart">❤️</div>
-        <h1 id="greeting">Dear Norah,</h1>
-        <p id="question">Will you be my Valentine? 😍😘💋🌹</p>
+        <h1 id="greeting">Hey Jamira,</h1>
+        <p id="question">Will you be my Valentine? 😊🌹</p>
 
         <div class="buttons" id="buttonArea">
-            <button class="btn yes" id="yesBtn">Yes 🥰❤️</button>
-            <button class="btn no" id="noBtn">No 😔</button>
+            <button class="btn yes" id="yesBtn">Yes 💖</button>
+            <button class="btn no" id="noBtn">No 😅</button>
         </div>
 
         <div id="responseMessage" class="hidden-message"></div>
@@ -180,6 +177,7 @@
         const greeting = document.getElementById('greeting');
         const question = document.getElementById('question');
 
+        // 🏃‍♀️ No button runs away — with sweet message
         noBtn.addEventListener('mouseover', function() {
             const x = Math.random() * (buttonArea.clientWidth - noBtn.clientWidth);
             const y = Math.random() * (buttonArea.clientHeight - noBtn.clientHeight);
@@ -188,7 +186,7 @@
             noBtn.style.top = y + 'px';
             
             messageDiv.style.display = 'block';
-            messageDiv.innerHTML = '😳 Saying no would just be shy… don’t you think, Norah? 💘';
+            messageDiv.innerHTML = '💕 Aww, you’re kinda cute when you play hard to get, Jamira... 😊';
         });
 
         noBtn.addEventListener('touchstart', function(e) {
@@ -200,32 +198,33 @@
             noBtn.style.top = y + 'px';
             
             messageDiv.style.display = 'block';
-            messageDiv.innerHTML = '😳 Saying no would just be shy… don’t you think, Norah? 💘';
+            messageDiv.innerHTML = '💕 Aww, you’re kinda cute when you play hard to get, Jamira... 😊';
         });
 
+        // ✅ Yes button shows "Love you too, hun"
         yesBtn.addEventListener('click', function() {
             buttonArea.style.display = 'none';
             question.style.display = 'none';
-            greeting.innerHTML = 'Yay! You said YES! ❤️ Norah';
+            greeting.innerHTML = 'Yay! ❤️ Jamira';
             
             messageDiv.style.display = 'block';
-            messageDiv.style.background = 'transparent';
-            messageDiv.style.border = 'none';
-            messageDiv.style.padding = '0';
-            messageDiv.style.backdropFilter = 'none';
+            messageDiv.style.background = 'rgba(0, 0, 0, 0.3)';
+            messageDiv.style.border = '2px dashed rgba(255, 255, 255, 0.6)';
+            messageDiv.style.padding = '25px';
+            messageDiv.style.backdropFilter = 'blur(4px)';
             
             messageDiv.innerHTML = `
                 <div class="video-container">
                     <video controls autoplay loop>
-                        <source src="https://github.com/HIVE-Cloud/NORAH-Valentines/raw/main/VivaCut_video_1770806034928_HD.mp4" type="video/mp4">
+                        <source src="https://raw.githubusercontent.com/HIVE-Cloud/JAMIRA-BAE/refs/heads/main/VID-20260212-WA0011.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                     <div class="video-message">
-                        This is the moment I knew. 💕
+                        Love you too, hun 💖
                     </div>
                 </div>
             `;
         });
     </script>
 </body>
-  </html>
+    </html>
